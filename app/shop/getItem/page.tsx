@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 const getShops = async () => {
     try {
-        const res = await fetch("https://modernhaven.vercel.app/api/shops/", {cache: "no-store"});
+        const res = await fetch("http://localhost:3000/api/shops/", {cache: "no-store"});
         if (!res.ok) {
             throw new Error("Failed to fetch Shops")
         }
