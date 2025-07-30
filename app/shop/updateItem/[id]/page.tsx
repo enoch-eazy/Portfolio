@@ -3,7 +3,7 @@ import EditShopForm from "@/app/components/shared/EditTopicform";
 
 const getShopById = async (id: any) => {
     try {
-        const res = await fetch(`https://modernhaven.vercel.app/api/shops/${id}`, {
+        const res = await fetch(`http://localhost:4000/api/shops/${id}`, {
             cache: "no-cache"
         });
         if(!res.ok) {
