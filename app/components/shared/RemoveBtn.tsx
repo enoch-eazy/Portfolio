@@ -6,7 +6,7 @@ export default function RemoveBtn({ id }: any) {
     const removeShop = async () => {
     const confirmed = confirm("Are you sure?");
     if (confirmed) {
-        const res = await fetch(`https://modernhaven.vercel.app/api/shops?id=${id}`, {
+        const res = await fetch(`http://localhost:4000/api/shops?id=${id}`, {
             method: "DELETE",
         });
         if (res.ok) {
