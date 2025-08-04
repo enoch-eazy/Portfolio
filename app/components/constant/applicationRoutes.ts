@@ -6,4 +6,5 @@ export class ApplicationRoutes {
     static readonly Contact = "/contact";
     static readonly SignUp = "/signup";
     static readonly Login = "/login";
+    static readonly Shop = "/shop"
 }
