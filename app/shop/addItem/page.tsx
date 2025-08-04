@@ -1,7 +1,9 @@
 "use client"
 
+import { ApplicationRoutes } from "@/app/components/constant/applicationRoutes";
 import { sectionPadding } from "@/app/styles/styles";
 import Button from "@/app/ui/button";
+import { Icons } from "@/app/ui/icons";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -13,7 +15,7 @@ export default function AddItem() {
         description: "",
         price: ""
     });
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
         if (name === "price") {
             const numericValue =  value.replace(/\D/g, "")
@@ -48,21 +50,26 @@ export default function AddItem() {
         }
     }
     return (
-        <section className={`${sectionPadding} mt-20 py-20 `}>
-            <form onSubmit={handleSubmit} className="w-full md:w-[600px] flex flex-col gap-6 mt-10 mx-auto">
+        <section className={`ml-10 mt-10 mb-10 py-20`}>
+            <div 
+            onClick={() => ApplicationRoutes.Shop}
+            className="flex items-center gap-4 font-bold text-xl cursor-pointer ">
+                <Icons.ArrowLeft />
+                Back
+            </div>
+            <form onSubmit={handleSubmit} className="mx-auto bg-gray-100 shadow-2xl p-6 w-full md:w-[600px] flex flex-col gap-6">
                 <input 
                 onChange={handleChange}
                 name="title"
                 value={formValue.title}
-                className="border border-slate-300 px-8 py-3"
+                className="border border-slate-300 px-8 py-3 "
                 type="text"
                 placeholder="Item" />
-                <input 
+                <textarea 
                 onChange={handleChange}
                 name="description"
                 value={formValue.description}
-                className="border border-slate-300 px-8 py-3"
-                type="text"
+                className="border border-slate-300 px-8 py-3 resize-none"
                 placeholder="Description"
                 />
                 <input 
