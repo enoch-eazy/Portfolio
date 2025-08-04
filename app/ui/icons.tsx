@@ -1,4 +1,4 @@
-import { BsAwardFill } from "react-icons/bs";
+import { BsArrowLeft, BsAwardFill } from "react-icons/bs";
 import { CiLogin, CiLogout } from "react-icons/ci";
 import { FaEyeSlash, FaQuoteLeft, FaThumbsUp } from "react-icons/fa";
 import { GiPoliceBadge } from "react-icons/gi";
@@ -75,6 +75,9 @@ export const Icons = {
         <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M13.7266 5.01892L10.2266 8.51892C9.89844 8.87439 9.32422 8.87439 8.99609 8.51892C8.64062 8.19079 8.64062 7.61657 8.99609 7.28845L10.9922 5.26501H0.875C0.382812 5.26501 0 4.8822 0 4.39001C0 3.87048 0.382812 3.51501 0.875 3.51501H10.9922L8.99609 1.51892C8.64062 1.19079 8.64062 0.616576 8.99609 0.288452C9.32422 -0.0670167 9.89844 -0.0670167 10.2266 0.288452L13.7266 3.78845C14.082 4.11657 14.082 4.69079 13.7266 5.01892Z" fill="white" />
         </svg>
+    ),
+    ArrowLeft: (props: IconProps) => (
+        <BsArrowLeft />
     ),
 
     CheckIcon: (props: IconProps) => (
