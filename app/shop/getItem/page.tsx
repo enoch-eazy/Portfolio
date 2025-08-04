@@ -18,24 +18,28 @@ export default async function GetItem() {
     const shops = data?.shops || [];
     return (
         <>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
         {shops.map((item: any) => (
-        <div key={item._id} className="p-4 border border-slate-300 my-3 flex justify-between items-end">
-            <div>
-                <h2 className="font-bold text-2xl">{item.title}</h2>
-                <p className="text-sm">
-                   {item.description}
-                </p>
-                <p className="font-bold mt-6">
-                    {item.price}
-                </p>
+            <div key={item._id} className="p-4 border border-slate-300 my-3 flex justify-between items-end">
+                <div>
+                    <h2 className="font-bold text-2xl">{item.title}</h2>
+                    <p className="text-sm">
+                    {item.description}
+                    </p>
+                    <p className="font-bold mt-6">
+                        {item.price}
+                    </p>
+                </div>
+                <div className="flex gap-2 ">
+                    <RemoveBtn id={item._id}/>
+                    <Link href={`/shop/updateItem/${item._id}`}>
+                    <HiPencilAlt size={24}/>
+                    </Link>
+                </div>
             </div>
-            <div className="flex gap-2 ">
-                <RemoveBtn id={item._id}/>
-                <Link href={`/shop/updateItem/${item._id}`}>
-                   <HiPencilAlt size={24}/>
-                </Link>
-            </div>
-        </div>) ) }
+        )
+        )}
+        </div>
         </>
     )
 }
